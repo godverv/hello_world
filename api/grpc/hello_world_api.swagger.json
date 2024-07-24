@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/hello_world_apiPingResponse"
+              "$ref": "#/definitions/VersionResponse"
             }
           },
           "default": {
@@ -39,7 +39,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/hello_world_apiPingRequest"
+              "$ref": "#/definitions/VersionRequest"
             }
           }
         ],
@@ -50,21 +50,14 @@
     }
   },
   "definitions": {
-    "hello_world_apiPingRequest": {
-      "type": "object",
-      "properties": {
-        "clientTimestamp": {
-          "type": "string",
-          "format": "date-time"
-        }
-      }
+    "VersionRequest": {
+      "type": "object"
     },
-    "hello_world_apiPingResponse": {
+    "VersionResponse": {
       "type": "object",
       "properties": {
-        "took": {
-          "type": "integer",
-          "format": "int64"
+        "version": {
+          "type": "string"
         }
       }
     },

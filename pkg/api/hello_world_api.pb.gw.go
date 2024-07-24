@@ -6,7 +6,7 @@ Package example_api is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package example_api
+package api
 
 import (
 	"context"
@@ -32,7 +32,7 @@ var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
 func request_HelloWorldAPI_Version_0(ctx context.Context, marshaler runtime.Marshaler, client HelloWorldAPIClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq PingRequest
+	var protoReq Version_Request
 	var metadata runtime.ServerMetadata
 
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
@@ -45,7 +45,7 @@ func request_HelloWorldAPI_Version_0(ctx context.Context, marshaler runtime.Mars
 }
 
 func local_request_HelloWorldAPI_Version_0(ctx context.Context, marshaler runtime.Marshaler, server HelloWorldAPIServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq PingRequest
+	var protoReq Version_Request
 	var metadata runtime.ServerMetadata
 
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
@@ -94,21 +94,21 @@ func RegisterHelloWorldAPIHandlerServer(ctx context.Context, mux *runtime.ServeM
 // RegisterHelloWorldAPIHandlerFromEndpoint is same as RegisterHelloWorldAPIHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
 func RegisterHelloWorldAPIHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
-	conn, err := grpc.NewClient(endpoint, opts...)
+	conn, err := grpc.DialContext(ctx, endpoint, opts...)
 	if err != nil {
 		return err
 	}
 	defer func() {
 		if err != nil {
 			if cerr := conn.Close(); cerr != nil {
-				grpclog.Errorf("Failed to close conn to %s: %v", endpoint, cerr)
+				grpclog.Infof("Failed to close conn to %s: %v", endpoint, cerr)
 			}
 			return
 		}
 		go func() {
 			<-ctx.Done()
 			if cerr := conn.Close(); cerr != nil {
-				grpclog.Errorf("Failed to close conn to %s: %v", endpoint, cerr)
+				grpclog.Infof("Failed to close conn to %s: %v", endpoint, cerr)
 			}
 		}()
 	}()

@@ -6,19 +6,18 @@
  */
 
 import * as fm from "../fetch.pb";
-import * as GoogleProtobufTimestamp from "../google/protobuf/timestamp.pb";
 
 
-export type PingRequest = {
-  clientTimestamp?: GoogleProtobufTimestamp.Timestamp;
+export type VersionRequest = Record<string, never>;
+
+export type VersionResponse = {
+  version?: string;
 };
 
-export type PingResponse = {
-  took?: number;
-};
+export type Version = Record<string, never>;
 
 export class helloWorldAPI {
-  static Version(this:void, req: PingRequest, initReq?: fm.InitReq): Promise<PingResponse> {
-    return fm.fetchRequest<PingResponse>(`/v1/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)});
+  static Version(this:void, req: VersionRequest, initReq?: fm.InitReq): Promise<VersionResponse> {
+    return fm.fetchRequest<VersionResponse>(`/v1/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)});
   }
 }

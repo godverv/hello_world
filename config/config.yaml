@@ -12,5 +12,7 @@ data_sources:
     pwd: ""
     name: hello_world
     ssl_mode: ""
-server: []
+server:
+  - name: grpc
+    port: 50051
 environment: []

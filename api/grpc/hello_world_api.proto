@@ -2,13 +2,12 @@ syntax = "proto3";
 
 package hello_world_api;
 
-import "google/protobuf/timestamp.proto";
 import "google/api/annotations.proto";
 
-option go_package = "/example_api";
+option go_package = "/api";
 
 service helloWorldAPI {
-  rpc Version(PingRequest) returns (PingResponse) {
+  rpc Version(Version.Request) returns (Version.Response) {
     option (google.api.http) = {
       post: "/v1/version"
       body: "*"
@@ -16,10 +15,10 @@ service helloWorldAPI {
   };
 }
 
-message PingRequest {
-  google.protobuf.Timestamp client_timestamp = 1;
-}
+message Version{
+  message Request{}
 
-message PingResponse {
-   uint32 took = 1;
+  message Response {
+    string version = 1;
+  }
 }
