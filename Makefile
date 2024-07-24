@@ -9,4 +9,4 @@ build-local-container:
 	docker buildx build \
 			--load \
 			--platform linux/arm64 \
-			-t example_service:local .
+			-t hello_world:local .

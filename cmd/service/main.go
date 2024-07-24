@@ -8,8 +8,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/godverv/example_service/internal/config"
-	"github.com/godverv/example_service/internal/utils/closer"
+	"github.com/godverv/hello_world/internal/config"
+	"github.com/godverv/hello_world/internal/utils/closer"
 	//_transport_imports
 )
 

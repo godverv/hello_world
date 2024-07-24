@@ -1,4 +1,4 @@
-module github.com/godverv/example_service
+module github.com/godverv/hello_world
 
 go 1.22.1
 
