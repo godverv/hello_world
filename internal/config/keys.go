@@ -3,5 +3,6 @@
 package config
 
 const (
-	ResourceSqlite = "sqlite"
+	ResourceSqlite   = "sqlite"
+	ResourcePostgres = "postgres"
 )
