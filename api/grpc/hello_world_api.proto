@@ -13,6 +13,19 @@ service helloWorldAPI {
       body: "*"
     };
   };
+
+  rpc Get(Get.Request) returns (Value) {
+    option (google.api.http) = {
+      get: "/v1/get/{key}"
+    };
+  }
+
+  rpc Set(Set.Request) returns (Set.Response) {
+    option (google.api.http) = {
+      post: "/v1/set"
+      body: "*"
+    };
+  };
 }
 
 message Version{
@@ -21,4 +34,26 @@ message Version{
   message Response {
     string version = 1;
   }
+}
+
+message Value {
+  string key = 1;
+  string value = 2;
+}
+
+message Values {
+  repeated Value values = 1;
+}
+
+message Get {
+  message Request {
+    string key = 1;
+  }
+}
+
+message Set {
+  message Request {
+    Values vals = 1;
+  }
+  message Response{}
 }

@@ -2,6 +2,7 @@ package api
 
 import (
 	"context"
+	"database/sql"
 
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"google.golang.org/grpc"
@@ -14,10 +15,15 @@ type Api struct {
 	api.UnimplementedHelloWorldAPIServer
 
 	version string
+
+	db *sql.DB
 }
 
-func New() *Api {
-	a := &Api{}
+func New(db *sql.DB) *Api {
+	a := &Api{
+		version: "v0.0.1",
+		db:      db,
+	}
 
 	return a
 }

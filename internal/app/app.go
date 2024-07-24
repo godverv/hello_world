@@ -9,6 +9,7 @@ import (
 	errors "github.com/Red-Sock/trace-errors"
 	"github.com/sirupsen/logrus"
 
+	"github.com/godverv/hello_world/internal/clients/sqlite"
 	"github.com/godverv/hello_world/internal/config"
 	"github.com/godverv/hello_world/internal/transport"
 	"github.com/godverv/hello_world/internal/transport/grpc"
@@ -38,7 +39,17 @@ func New() (App, error) {
 		return App{}, errors.Wrap(err, "error getting grpc config")
 	}
 
-	grpcServer, err := grpc.NewServer(grpcServerCfg, api.New())
+	dbConf, err := cfg.GetDataSources().Sqlite(config.ResourceSqlite)
+	if err != nil {
+		return App{}, errors.Wrap(err, "error getting sqlite config")
+	}
+
+	storage, err := sqlite.NewStorage(dbConf)
+	if err != nil {
+		return App{}, errors.Wrap(err, "error creating storage")
+	}
+
+	grpcServer, err := grpc.NewServer(grpcServerCfg, api.New(storage))
 	if err != nil {
 		return App{}, errors.Wrap(err, "error creating grpc server")
 	}
