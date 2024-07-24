@@ -5,4 +5,5 @@ package config
 const (
 	ResourceSqlite   = "sqlite"
 	ResourcePostgres = "postgres"
+	ServerGrpc       = "grpc"
 )
