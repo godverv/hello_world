@@ -14,5 +14,5 @@ data_sources:
     ssl_mode: ""
 server:
   - name: grpc
-    port: 50051
+    port: 80
 environment: []
