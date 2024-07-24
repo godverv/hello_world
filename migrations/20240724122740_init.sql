@@ -1,6 +1,6 @@
 -- +goose Up
 -- +goose StatementBegin
-CREATE TABLE values (
+CREATE TABLE user_values (
     key TEXT PRIMARY KEY,
     value TEXT
 );
@@ -8,5 +8,5 @@ CREATE TABLE values (
 
 -- +goose Down
 -- +goose StatementBegin
-DROP TABLE values;
+DROP TABLE user_values;
 -- +goose StatementEnd

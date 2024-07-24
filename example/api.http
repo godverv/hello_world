@@ -1,0 +1,17 @@
+### SET
+POST {{api}}/v1/set
+Content-Type: application/json
+
+{
+  "vals": {
+    "values": [
+      {
+        "key": "key",
+        "value": "val"
+      }
+    ]
+  }
+}
+
+### GET
+GET {{api}}/v1/get/key

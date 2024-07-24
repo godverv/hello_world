@@ -10,7 +10,7 @@ import (
 
 func (a *Api) Set(ctx context.Context, r *api.Set_Request) (*api.Set_Response, error) {
 	prep, err := a.db.PrepareContext(ctx, `
-		INSERT INTO values 
+		INSERT INTO user_values 
 			(key, value)
 		VALUES ($1, $2)
 		ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value
