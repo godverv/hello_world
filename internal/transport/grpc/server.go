@@ -47,7 +47,7 @@ func NewServer(
 
 	return &Server{
 		grpcServer:    grpcServer,
-		serverAddress: "0.0.0.0:" + server.GetPortStr(),
+		serverAddress: ":" + server.GetPortStr(),
 		imps:          imps,
 	}, nil
 }

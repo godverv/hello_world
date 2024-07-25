@@ -41,7 +41,7 @@ export type Set = Record<string, never>;
 
 export class helloWorldAPI {
   static Version(this:void, req: VersionRequest, initReq?: fm.InitReq): Promise<VersionResponse> {
-    return fm.fetchRequest<VersionResponse>(`/v1/version`, {...initReq, method: "POST", body: JSON.stringify(req, fm.replacer)});
+    return fm.fetchRequest<VersionResponse>(`/v1/version?${fm.renderURLSearchParams(req, [])}`, {...initReq, method: "GET"});
   }
   static Get(this:void, req: GetRequest, initReq?: fm.InitReq): Promise<Value> {
     return fm.fetchRequest<Value>(`/v1/get/${req.key}?${fm.renderURLSearchParams(req, ["key"])}`, {...initReq, method: "GET"});

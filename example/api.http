@@ -1,3 +1,7 @@
+### VERSION
+GET {{api}}/v1/version
+
+
 ### SET
 POST {{api}}/v1/set
 Content-Type: application/json

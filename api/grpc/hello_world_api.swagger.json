@@ -79,7 +79,7 @@
       }
     },
     "/v1/version": {
-      "post": {
+      "get": {
         "operationId": "helloWorldAPI_Version",
         "responses": {
           "200": {
@@ -95,16 +95,6 @@
             }
           }
         },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/hello_world_apiVersionRequest"
-            }
-          }
-        ],
         "tags": [
           "helloWorldAPI"
         ]
@@ -145,9 +135,6 @@
           }
         }
       }
-    },
-    "hello_world_apiVersionRequest": {
-      "type": "object"
     },
     "hello_world_apiVersionResponse": {
       "type": "object",
