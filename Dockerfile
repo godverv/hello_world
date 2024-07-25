@@ -12,6 +12,7 @@ RUN --mount=target=. \
 FROM alpine
 
 WORKDIR /app
+LABEL MATRESHKA_CONFIG_ENABLED=true
 
 COPY --from=builder /deploy/server/ .
 
