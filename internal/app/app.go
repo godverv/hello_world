@@ -3,7 +3,6 @@
 package app
 
 import (
-	"database/sql"
 	"github.com/Red-Sock/toolbox"
 	"github.com/Red-Sock/toolbox/closer"
 	errors "github.com/Red-Sock/trace-errors"
@@ -21,7 +20,7 @@ type App struct {
 	Stop func()
 	Cfg  config.Config
 	/* Data source connection */
-	Sqlite *sql.DB
+	Sqlite sqldb.DB
 	/* Servers managers */
 	Server *transport.ServersManager
 

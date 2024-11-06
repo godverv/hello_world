@@ -3,7 +3,6 @@
 package app
 
 import (
-	"database/sql"
 	errors "github.com/Red-Sock/trace-errors"
 	"github.com/godverv/hello_world/internal/clients/sqldb"
 )
