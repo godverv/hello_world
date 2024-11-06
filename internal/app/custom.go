@@ -5,6 +5,7 @@ package app
 
 import (
 	"github.com/godverv/hello_world/internal/transport"
+	"github.com/godverv/hello_world/internal/transport/grpc/api"
 )
 
 type Custom struct {
@@ -12,7 +13,9 @@ type Custom struct {
 }
 
 func (c *Custom) Init(a *App) error {
-	c.ServerManager = transport.NewManager()
-	c.ServerManager.AddServer()
+
+	grpcImpl := api.New(a.Sqlite, a.Cfg)
+	a.Server.AddImplementation(grpcImpl)
+
 	return nil
 }

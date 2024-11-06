@@ -8,7 +8,7 @@ import (
 	"github.com/godverv/hello_world/pkg/api"
 )
 
-func (a *Api) Set(ctx context.Context, r *api.Set_Request) (*api.Set_Response, error) {
+func (a *Impl) Set(ctx context.Context, r *api.Set_Request) (*api.Set_Response, error) {
 	prep, err := a.db.PrepareContext(ctx, `
 		INSERT INTO user_values 
 			(key, value)
