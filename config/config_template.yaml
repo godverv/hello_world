@@ -1,18 +1,16 @@
 app_info:
     name: github.com/godverv/hello_world
-    version: 0.0.1
+    version: v0.0.8
     startup_duration: 10s
 data_sources:
     - resource_name: sqlite
       path: ./data/sqlite/hello_world.db
+      migrations_folder: ./migrations
     - resource_name: postgres
+      migrations_folder: ""
       host: localhost
       port: 5432
-      user: hello_world
-      pwd: ""
-      name: hello_world
+      user: postgres
+      pwd: postgres
+      name: master
       ssl_mode: ""
-server:
-    - name: grpc
-      port: 50051
-environment: []
