@@ -6,3 +6,8 @@ data_sources:
     - resource_name: sqlite
       path: ./data/sqlite/hello_world.db
       migrations_folder: ./migrations
+servers:
+    80:
+        /{GRPC}:
+            module: pkg/hello_world
+            gateway: /v1

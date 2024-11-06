@@ -7,6 +7,7 @@ import (
 	"github.com/Red-Sock/toolbox/closer"
 	errors "github.com/Red-Sock/trace-errors"
 	"github.com/godverv/hello_world/internal/clients/sqldb"
+	"github.com/godverv/hello_world/internal/transport"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 	"golang.org/x/sync/errgroup"
@@ -20,6 +21,8 @@ type App struct {
 	Cfg  config.Config
 	/* Data source connection */
 	Sqlite sqldb.DB
+	/* Servers managers */
+	Server *transport.ServersManager
 
 	Custom Custom
 }
@@ -37,6 +40,11 @@ func New() (app App, err error) {
 		return App{}, errors.Wrap(err, "error during data sources initialization")
 	}
 
+	err = app.InitServers()
+	if err != nil {
+		return App{}, errors.Wrap(err, "error during server initialization")
+	}
+
 	err = app.Custom.Init(&app)
 	if err != nil {
 		return App{}, errors.Wrap(err, "error initializing custom app properties")
@@ -48,6 +56,8 @@ func New() (app App, err error) {
 func (a *App) Start() (err error) {
 	var eg *errgroup.Group
 	eg, a.Ctx = errgroup.WithContext(a.Ctx)
+	eg.Go(a.Server.Start)
+	closer.Add(func() error { return a.Server.Stop() })
 
 	interaptedC := func() chan struct{} {
 		c := make(chan struct{})
