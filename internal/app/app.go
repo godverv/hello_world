@@ -3,10 +3,10 @@
 package app
 
 import (
-	"database/sql"
 	"github.com/Red-Sock/toolbox"
 	"github.com/Red-Sock/toolbox/closer"
 	errors "github.com/Red-Sock/trace-errors"
+	"github.com/godverv/hello_world/internal/clients/sqldb"
 	"github.com/godverv/hello_world/internal/transport"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
