@@ -13,8 +13,8 @@ type Custom struct {
 }
 
 func (c *Custom) Init(a *App) error {
-
 	grpcImpl := api.New(a.Sqlite, a.Cfg)
+
 	a.Server.AddImplementation(grpcImpl)
 
 	return nil
