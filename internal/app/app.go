@@ -3,6 +3,7 @@
 package app
 
 import (
+	"database/sql"
 	"github.com/Red-Sock/toolbox"
 	"github.com/Red-Sock/toolbox/closer"
 	errors "github.com/Red-Sock/trace-errors"
