@@ -7,11 +7,9 @@ require (
 	github.com/Red-Sock/trace-errors v0.0.10
 	github.com/godverv/matreshka v0.0.36
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.23.0
-	github.com/lib/pq v1.10.9
 	github.com/pkg/errors v0.9.1
 	github.com/pressly/goose/v3 v3.22.1
 	github.com/sirupsen/logrus v1.9.3
-	github.com/soheilhy/cmux v0.1.5
 	golang.org/x/net v0.30.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20241104194629-dd2ea8efbc28
 	google.golang.org/grpc v1.67.1

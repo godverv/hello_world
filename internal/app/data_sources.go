@@ -13,10 +13,5 @@ func (a *App) InitDataSources() (err error) {
 		return errors.Wrap(err, "error during sql connection initialization")
 	}
 
-	a.Postgres, err = sqldb.New(a.Cfg.DataSources.Postgres)
-	if err != nil {
-		return errors.Wrap(err, "error during sql connection initialization")
-	}
-
 	return nil
 }

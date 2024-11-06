@@ -17,8 +17,7 @@ type App struct {
 	Stop func()
 	Cfg  config.Config
 	/* Data source connection */
-	Sqlite   sqldb.DB
-	Postgres sqldb.DB
+	Sqlite sqldb.DB
 
 	Custom Custom
 }

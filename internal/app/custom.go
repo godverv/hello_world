@@ -3,9 +3,15 @@
 
 package app
 
-type Custom struct{}
+import (
+	"github.com/godverv/hello_world/internal/transport"
+)
+
+type Custom struct {
+	ServerManager *transport.ServersManager
+}
 
 func (c *Custom) Init(a *App) error {
-
+	c.ServerManager = transport.NewManager()
 	return nil
 }
