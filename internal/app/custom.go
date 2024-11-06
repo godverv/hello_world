@@ -13,5 +13,6 @@ type Custom struct {
 
 func (c *Custom) Init(a *App) error {
 	c.ServerManager = transport.NewManager()
+	c.ServerManager.AddServer()
 	return nil
 }

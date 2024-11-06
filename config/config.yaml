@@ -1,11 +1,8 @@
 app_info:
-  name: github.com/godverv/hello_world
-  version: v0.0.8
-  startup_duration: 10s
+    name: github.com/godverv/hello_world
+    version: v0.0.8
+    startup_duration: 10s
 data_sources:
-  - resource_name: sqlite
-    path: ./data/sqlite/hello_world.db
-server:
-  - name: grpc
-    port: 80
-environment: []
+    - resource_name: sqlite
+      path: ./data/sqlite/hello_world.db
+      migrations_folder: ./migrations

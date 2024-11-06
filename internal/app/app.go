@@ -7,9 +7,11 @@ import (
 	"github.com/Red-Sock/toolbox/closer"
 	errors "github.com/Red-Sock/trace-errors"
 	"github.com/godverv/hello_world/internal/clients/sqldb"
-	"github.com/godverv/hello_world/internal/config"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
+	"golang.org/x/sync/errgroup"
+
+	"github.com/godverv/hello_world/internal/config"
 )
 
 type App struct {
@@ -44,8 +46,35 @@ func New() (app App, err error) {
 }
 
 func (a *App) Start() (err error) {
-	toolbox.WaitForInterrupt()
+	var eg *errgroup.Group
+	eg, a.Ctx = errgroup.WithContext(a.Ctx)
 
+	interaptedC := func() chan struct{} {
+		c := make(chan struct{})
+		go func() {
+			toolbox.WaitForInterrupt()
+			close(c)
+		}()
+
+		return c
+	}()
+
+	errC := func() chan error {
+		c := make(chan error)
+		go func() {
+			c <- eg.Wait()
+			close(c)
+			return
+		}()
+		return c
+	}()
+
+	select {
+	case err := <-errC:
+		logrus.Println("error during application startup: ", err)
+	case <-interaptedC:
+		logrus.Println("received interrupt signal")
+	}
 	logrus.Println("shutting down the app")
 
 	err = closer.Close()
