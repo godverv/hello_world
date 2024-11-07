@@ -3,14 +3,20 @@
 package app
 
 import (
+	"database/sql"
 	errors "github.com/Red-Sock/trace-errors"
-	"github.com/godverv/hello_world/internal/clients/sqldb"
+	"github.com/godverv/hello_world/internal/clients/redis"
 )
 
 func (a *App) InitDataSources() (err error) {
 	a.Sqlite, err = sqldb.New(a.Cfg.DataSources.Sqlite)
 	if err != nil {
 		return errors.Wrap(err, "error during sql connection initialization")
+	}
+
+	a.Redis, err = redis.New(a.Cfg.DataSources.Redis)
+	if err != nil {
+		return errors.Wrap(err, "error during redis connection initialization")
 	}
 
 	return nil

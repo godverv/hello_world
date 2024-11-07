@@ -5,6 +5,7 @@ go 1.22.1
 require (
 	github.com/Red-Sock/toolbox v0.0.5
 	github.com/Red-Sock/trace-errors v0.0.10
+	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/godverv/matreshka v0.0.36
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.23.0
 	github.com/pressly/goose/v3 v3.22.1
@@ -22,12 +23,15 @@ require (
 require (
 	github.com/Red-Sock/evon v0.0.15 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
+	github.com/google/pprof v0.0.0-20240827171923-fa2c70bbbfe5 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/hashicorp/golang-lru/v2 v2.0.7 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mfridman/interpolate v0.0.2 // indirect
 	github.com/ncruces/go-strftime v0.1.9 // indirect
+	github.com/onsi/ginkgo v1.16.5 // indirect
+	github.com/onsi/gomega v1.35.1 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
 	github.com/rogpeppe/go-internal v1.12.0 // indirect
 	github.com/sethvargo/go-retry v0.3.0 // indirect
