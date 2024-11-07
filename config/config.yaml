@@ -1,10 +1,10 @@
 app_info:
     name: github.com/godverv/hello_world
-    version: v0.0.10
+    version: v0.0.11
     startup_duration: 10s
 data_sources:
     - resource_name: sqlite
-      path: ./data/sqlite/hello_world.db
+      path: ./hello_world.db
       migrations_folder: ./migrations
 servers:
     80:
