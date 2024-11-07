@@ -12,7 +12,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-func New(cfg resources.SqlResource) (DB, error) {
+func New(cfg resources.SqlResource) (*sql.DB, error) {
 	dialect := cfg.SqlDialect()
 	connStr := cfg.ConnectionString()
 
