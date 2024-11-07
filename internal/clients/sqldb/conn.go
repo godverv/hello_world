@@ -1,6 +1,7 @@
 package sqldb
 
 import (
+	"context"
 	"database/sql"
 
 	"github.com/Red-Sock/toolbox/closer"
@@ -10,8 +11,6 @@ import (
 	"github.com/pressly/goose/v3"
 	"github.com/sirupsen/logrus"
 )
-
-type DB *sql.DB
 
 func New(cfg resources.SqlResource) (DB, error) {
 	dialect := cfg.SqlDialect()
@@ -43,4 +42,18 @@ func New(cfg resources.SqlResource) (DB, error) {
 	}
 
 	return conn, nil
+}
+
+type DB interface {
+	Prepare(query string) (*sql.Stmt, error)
+	PrepareContext(ctx context.Context, query string) (*sql.Stmt, error)
+
+	Exec(query string, args ...any) (sql.Result, error)
+	ExecContext(ctx context.Context, query string, args ...any) (sql.Result, error)
+
+	Query(query string, args ...any) (*sql.Rows, error)
+	QueryContext(ctx context.Context, query string, args ...any) (*sql.Rows, error)
+
+	QueryRow(query string, args ...any) *sql.Row
+	QueryRowContext(ctx context.Context, query string, args ...any) *sql.Row
 }
