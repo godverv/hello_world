@@ -22,6 +22,7 @@ type App struct {
 	Cfg  config.Config
 	/* Data source connection */
 	Sqlite *sql.DB
+	Redis  *redis.Client
 	/* Servers managers */
 	Server *transport.ServersManager
 
