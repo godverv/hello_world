@@ -8,5 +8,4 @@ import (
 
 type DataSourcesConfig struct {
 	Sqlite *resources.Sqlite
-	Redis  *resources.Redis
 }

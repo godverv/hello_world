@@ -6,12 +6,6 @@ data_sources:
     - resource_name: sqlite
       path: ./data/sqlite/hello_world.db
       migrations_folder: ./migrations
-    - resource_name: redis
-      host: localhost
-      port: 6379
-      user: ""
-      pwd: ""
-      db: 0
 servers:
     80:
         /{GRPC}:

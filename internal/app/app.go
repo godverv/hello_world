@@ -7,7 +7,6 @@ import (
 	"github.com/Red-Sock/toolbox"
 	"github.com/Red-Sock/toolbox/closer"
 	errors "github.com/Red-Sock/trace-errors"
-	"github.com/go-redis/redis"
 	"github.com/godverv/hello_world/internal/transport"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
@@ -22,7 +21,6 @@ type App struct {
 	Cfg  config.Config
 	/* Data source connection */
 	Sqlite *sql.DB
-	Redis  *redis.Client
 	/* Servers managers */
 	Server *transport.ServersManager
 
