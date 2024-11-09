@@ -22,6 +22,7 @@ require (
 
 require (
 	github.com/Red-Sock/evon v0.0.15 // indirect
+	github.com/alexliesenfeld/go-swagger-ui v0.0.1-beta.5 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/google/pprof v0.0.0-20240827171923-fa2c70bbbfe5 // indirect
 	github.com/google/uuid v1.6.0 // indirect

@@ -10,6 +10,7 @@ import (
 	"google.golang.org/grpc"
 
 	"github.com/godverv/hello_world/internal/config"
+	"github.com/godverv/hello_world/internal/transport/grpc/api/docs"
 	"github.com/godverv/hello_world/pkg/api"
 )
 
@@ -50,4 +51,8 @@ func (a *Impl) Gateway(ctx context.Context, endpoint string, opts ...grpc.DialOp
 	}
 
 	return "/v1/*", gwHttpMux
+}
+
+func (a *Impl) SwaggerUI() (path string, handler http.Handler) {
+	return docs.Swagger()
 }
