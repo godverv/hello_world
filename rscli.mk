@@ -30,8 +30,7 @@ gen-server-grpc: .pre-gen-server-grpc .deps-grpc .gen-server-grpc
 	protoc \
     	-I=./api \
     	-I $(GOPATH)/bin \
-    	--openapiv2_out ./pkg/docs \
-	 	--openapiv2_opt logtostderr=true \
+    	--openapiv2_out=./pkg/docs \
     	--go-grpc_out=./pkg/ \
     	--grpc-gateway_out=logtostderr=true:./pkg/ \
     	--grpc-gateway-ts_out=./pkg/web \
