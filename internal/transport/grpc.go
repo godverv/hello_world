@@ -18,10 +18,6 @@ type GrpcWithGateway interface {
 	Gateway(ctx context.Context, endpoint string, opts ...grpc.DialOption) (rootRoute string, handler http.Handler)
 }
 
-type ServerWithSwaggerDocs interface {
-	SwaggerUI() (path string, handler http.Handler)
-}
-
 type grpcServer struct {
 	ctx      context.Context
 	listener net.Listener
@@ -79,11 +75,6 @@ func (s *grpcServer) AddImplementation(grpcImpl GrpcImpl, opts ...grpc.ServerOpt
 		s.gatewayMux.Handle(grpcWithGateway.Gateway(s.ctx,
 			s.listener.Addr().String(),
 			grpc.WithTransportCredentials(insecure.NewCredentials())))
-	}
-
-	grpcWithSwaggerUI, ok := grpcImpl.(ServerWithSwaggerDocs)
-	if ok {
-		s.gatewayMux.Handle(grpcWithSwaggerUI.SwaggerUI())
 	}
 
 	s.opts = append(s.opts, opts...)

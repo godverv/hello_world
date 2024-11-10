@@ -1,9 +1,5 @@
 gen: gen-server-grpc
 
-RSCLI_VERSION=v0.0.31
-rscli-version:
-	@echo $(RSCLI_VERSION)
-
 build-local-container:
 	docker buildx build \
 			--load \
@@ -13,6 +9,11 @@ build-local-container:
 
 ### Grpc server generation
 gen-server-grpc: .pre-gen-server-grpc .deps-grpc .gen-server-grpc
+
+.pre-gen-server-grpc:
+	mkdir -p pkg/
+	mkdir -p pkg/docs
+	mkdir -p pkg/web
 
 .deps-grpc:
 	go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
@@ -24,19 +25,16 @@ gen-server-grpc: .pre-gen-server-grpc .deps-grpc .gen-server-grpc
 	rm -rf api/validate
 	ln -sf $(GOPATH)/pkg/mod/github.com/grpc-ecosystem/grpc-gateway@v1.16.0/third_party/googleapis/google api/google
 	ln -sf $(GOPATH)/pkg/mod/github.com/envoyproxy/protoc-gen-validate@v1.0.2/validate api/validate
-.pre-gen-server-grpc:
-	mkdir -p pkg/
 
 .gen-server-grpc:
 	protoc \
     	-I=./api \
     	-I $(GOPATH)/bin \
-    	--openapiv2_out ./api \
+    	--openapiv2_out ./pkg/docs \
 	 	--openapiv2_opt logtostderr=true \
-	  	--openapiv2_opt yaml=true \
     	--go-grpc_out=./pkg/ \
     	--grpc-gateway_out=logtostderr=true:./pkg/ \
-    	--grpc-gateway-ts_out=./pkg \
+    	--grpc-gateway-ts_out=./pkg/web \
     	--go_out=./pkg/ \
 	    --validate_out="lang=go:./pkg" \
     	./api/grpc/*.proto
