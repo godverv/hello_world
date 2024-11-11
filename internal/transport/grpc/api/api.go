@@ -50,7 +50,7 @@ func (a *Impl) Gateway(ctx context.Context, endpoint string, opts ...grpc.DialOp
 		logrus.Errorf("error registering grpc2http handler: %s", err)
 	}
 
-	return "/v1/", gwHttpMux
+	return "/api/", gwHttpMux
 }
 
 func (a *Impl) SwaggerUI() (path string, handler http.Handler) {
