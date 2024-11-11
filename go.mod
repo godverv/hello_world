@@ -1,8 +1,6 @@
 module github.com/godverv/hello_world
 
-go 1.22.7
-
-toolchain go1.22.9
+go 1.23.3
 
 require (
 	github.com/Red-Sock/toolbox v0.0.5
