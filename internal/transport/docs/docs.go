@@ -10,11 +10,11 @@ import (
 //go:embed hello_world_api.swagger.json
 var spec []byte
 
-const basePath = "/docs/"
+const BasePath = "/docs/"
 
 func Swagger() (path string, handler http.HandlerFunc) {
-	return basePath, swaggerui.NewHandler(
-		swaggerui.WithBasePath(basePath),
+	return BasePath, swaggerui.NewHandler(
+		swaggerui.WithBasePath(BasePath),
 		swaggerui.WithHTMLTitle("HELLO_WORLD_DOCS"),
 		swaggerui.WithSpec(spec),
 		swaggerui.WithTryItOutEnabled(true),
