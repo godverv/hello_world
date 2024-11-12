@@ -1,11 +1,11 @@
 github.com/Red-Sock/evon v0.0.15 h1:yjTO3CwMh73cXYUcMBdMFYsZ89xGbH1BBmqYty3hVH4=
 github.com/Red-Sock/evon v0.0.15/go.mod h1:BSqhsH7BWJu59QFmyzpIc7kqNQkvVi5Gb1MhZMx7mlc=
+github.com/Red-Sock/go-swagger-ui v0.0.2 h1:3JbNnyNQ25rwzyBN46mYEBXZZ5RhcijbDwS7g60dz3Y=
+github.com/Red-Sock/go-swagger-ui v0.0.2/go.mod h1:8F1CRKxVIKTTX7YWGn7OXmJUx9c6fM8AfxQlc9XWUMo=
 github.com/Red-Sock/toolbox v0.0.5 h1:LnMqPYaNloul8uDjC/1Oz06fz3ObkKp1Qibz/x8xAuU=
 github.com/Red-Sock/toolbox v0.0.5/go.mod h1:FNgrs8XCZ/N1VeaPyhHK5MEyzxfaxf4o9UbAOQj/di4=
 github.com/Red-Sock/trace-errors v0.0.11 h1:b8eC8Unz9rp2U+Bc+M3xwc1tKSyikkQ0vsKlpH0EzPE=
 github.com/Red-Sock/trace-errors v0.0.11/go.mod h1:Yk7KzCmvgX3zxgS7Qvf7/iZUGS3s7dxFHetsgQ3YZvM=
-github.com/alexliesenfeld/go-swagger-ui v0.0.1-beta.5 h1:ixqUif1MGigxS+ra6L7uAcajlh6Vy5QO/8EUQtsm/wM=
-github.com/alexliesenfeld/go-swagger-ui v0.0.1-beta.5/go.mod h1:6q1khKyTQybOl9dlzh1L+a0lIJLZeksNqQhcLpZ0GEw=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=

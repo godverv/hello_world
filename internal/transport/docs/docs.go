@@ -1,23 +1,47 @@
 package docs
 
 import (
-	_ "embed"
+	"embed"
+	"io/fs"
+	"log"
 	"net/http"
+	"path"
 
-	swaggerui "github.com/alexliesenfeld/go-swagger-ui"
+	swaggerui "github.com/Red-Sock/go-swagger-ui"
 )
 
-//go:embed hello_world_api.swagger.json
-var spec []byte
+//go:embed all:swaggers
+var swaggers embed.FS
 
-const BasePath = "/docs/"
+const (
+	BasePath    = "/docs/"
+	swaggerPath = BasePath + "swaggers/"
+)
 
-func Swagger() (path string, handler http.HandlerFunc) {
-	return BasePath, swaggerui.NewHandler(
+func Swagger() (p string, handler http.HandlerFunc) {
+	mux := http.NewServeMux()
+
+	mux.Handle(BasePath, swaggerui.NewHandler(
 		swaggerui.WithBasePath(BasePath),
 		swaggerui.WithHTMLTitle("HELLO_WORLD_DOCS"),
-		swaggerui.WithSpec(spec),
-		swaggerui.WithTryItOutEnabled(true),
-		swaggerui.WithPersistAuthorization(true),
-	)
+		swaggerui.WithSpecURLs("hello_world_api", []swaggerui.SpecURL{
+			{
+				Name: "hello_world_api",
+				URL:  path.Join(swaggerPath, "hello_world_api.swagger.json"),
+			},
+		}),
+		swaggerui.WithShowExtensions(true),
+	))
+
+	{
+		stripped, err := fs.Sub(swaggers, "swaggers")
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		ffs := http.StripPrefix(swaggerPath, http.FileServer(http.FS(stripped)))
+		mux.Handle(swaggerPath, ffs)
+	}
+
+	return BasePath, mux.ServeHTTP
 }

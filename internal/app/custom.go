@@ -5,6 +5,7 @@ package app
 
 import (
 	"github.com/godverv/hello_world/internal/transport"
+	"github.com/godverv/hello_world/internal/transport/docs"
 	"github.com/godverv/hello_world/internal/transport/grpc/api"
 )
 
@@ -16,6 +17,8 @@ func (c *Custom) Init(a *App) error {
 	grpcImpl := api.New(a.Sqlite, a.Cfg)
 
 	a.Server.AddImplementation(grpcImpl)
+
+	a.Server.AddHttpHandler(docs.Swagger())
 
 	return nil
 }

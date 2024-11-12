@@ -3,9 +3,9 @@ module github.com/godverv/hello_world
 go 1.23.3
 
 require (
+	github.com/Red-Sock/go-swagger-ui v0.0.2
 	github.com/Red-Sock/toolbox v0.0.5
 	github.com/Red-Sock/trace-errors v0.0.11
-	github.com/alexliesenfeld/go-swagger-ui v0.0.1-beta.5
 	github.com/godverv/matreshka v0.0.37
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.23.0
 	github.com/pressly/goose/v3 v3.22.1
