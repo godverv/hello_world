@@ -13,6 +13,7 @@ gen-server-grpc: .pre-gen-server-grpc .deps-grpc .gen-server-grpc
 .pre-gen-server-grpc:
 	mkdir -p pkg/
 	mkdir -p pkg/docs
+	mkdir -p pkg/docs/swaggers
 	mkdir -p pkg/web
 
 .deps-grpc:
@@ -20,7 +21,7 @@ gen-server-grpc: .pre-gen-server-grpc .deps-grpc .gen-server-grpc
 	go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 	go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@latest
 	go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
-	go install github.com/Red-Sock/protoc-gen-docs@v0.0.1
+	go install github.com/Red-Sock/protoc-gen-docs@v0.0.4
 
 	rm -rf api/google
 	rm -rf api/validate
@@ -30,7 +31,6 @@ gen-server-grpc: .pre-gen-server-grpc .deps-grpc .gen-server-grpc
 .gen-server-grpc:
 	protoc \
     	-I=./api \
-    	-I $(GOPATH)/bin \
     	--openapiv2_out=./pkg/docs/swaggers \
     	--docs_out=./pkg/docs \
     	--go-grpc_out=./pkg/ \
