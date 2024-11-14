@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "grpc/hello_world_api.proto",
+    "title": "api/grpc/hello_world_api.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/get/{key}": {
+    "/api/get/{key}": {
       "get": {
         "operationId": "helloWorldAPI_Get",
         "responses": {
@@ -46,7 +46,7 @@
         ]
       }
     },
-    "/v1/set": {
+    "/api/set": {
       "post": {
         "operationId": "helloWorldAPI_Set",
         "responses": {
@@ -78,7 +78,7 @@
         ]
       }
     },
-    "/v1/version": {
+    "/api/version": {
       "get": {
         "operationId": "helloWorldAPI_Version",
         "responses": {

@@ -1,9 +1,10 @@
 syntax = "proto3";
+
 import "google/api/annotations.proto";
 
 package hello_world_api;
 
-option go_package = "/api";
+option go_package = "/hello_world";
 
 service helloWorldAPI {
   rpc Version(Version.Request) returns (Version.Response) {

@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.33.0
 // 	protoc        v4.25.1
-// source: grpc/hello_world_api.proto
+// source: api/grpc/hello_world_api.proto
 
-package api
+package hello_world
 
 import (
 	_ "google.golang.org/genproto/googleapis/api/annotations"
@@ -30,7 +30,7 @@ type Version struct {
 func (x *Version) Reset() {
 	*x = Version{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_hello_world_api_proto_msgTypes[0]
+		mi := &file_api_grpc_hello_world_api_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -43,7 +43,7 @@ func (x *Version) String() string {
 func (*Version) ProtoMessage() {}
 
 func (x *Version) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_hello_world_api_proto_msgTypes[0]
+	mi := &file_api_grpc_hello_world_api_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -56,7 +56,7 @@ func (x *Version) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Version.ProtoReflect.Descriptor instead.
 func (*Version) Descriptor() ([]byte, []int) {
-	return file_grpc_hello_world_api_proto_rawDescGZIP(), []int{0}
+	return file_api_grpc_hello_world_api_proto_rawDescGZIP(), []int{0}
 }
 
 type Value struct {
@@ -71,7 +71,7 @@ type Value struct {
 func (x *Value) Reset() {
 	*x = Value{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_hello_world_api_proto_msgTypes[1]
+		mi := &file_api_grpc_hello_world_api_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -84,7 +84,7 @@ func (x *Value) String() string {
 func (*Value) ProtoMessage() {}
 
 func (x *Value) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_hello_world_api_proto_msgTypes[1]
+	mi := &file_api_grpc_hello_world_api_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -97,7 +97,7 @@ func (x *Value) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Value.ProtoReflect.Descriptor instead.
 func (*Value) Descriptor() ([]byte, []int) {
-	return file_grpc_hello_world_api_proto_rawDescGZIP(), []int{1}
+	return file_api_grpc_hello_world_api_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Value) GetKey() string {
@@ -125,7 +125,7 @@ type Values struct {
 func (x *Values) Reset() {
 	*x = Values{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_hello_world_api_proto_msgTypes[2]
+		mi := &file_api_grpc_hello_world_api_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -138,7 +138,7 @@ func (x *Values) String() string {
 func (*Values) ProtoMessage() {}
 
 func (x *Values) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_hello_world_api_proto_msgTypes[2]
+	mi := &file_api_grpc_hello_world_api_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -151,7 +151,7 @@ func (x *Values) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Values.ProtoReflect.Descriptor instead.
 func (*Values) Descriptor() ([]byte, []int) {
-	return file_grpc_hello_world_api_proto_rawDescGZIP(), []int{2}
+	return file_api_grpc_hello_world_api_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Values) GetValues() []*Value {
@@ -170,7 +170,7 @@ type Get struct {
 func (x *Get) Reset() {
 	*x = Get{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_hello_world_api_proto_msgTypes[3]
+		mi := &file_api_grpc_hello_world_api_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -183,7 +183,7 @@ func (x *Get) String() string {
 func (*Get) ProtoMessage() {}
 
 func (x *Get) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_hello_world_api_proto_msgTypes[3]
+	mi := &file_api_grpc_hello_world_api_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -196,7 +196,7 @@ func (x *Get) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Get.ProtoReflect.Descriptor instead.
 func (*Get) Descriptor() ([]byte, []int) {
-	return file_grpc_hello_world_api_proto_rawDescGZIP(), []int{3}
+	return file_api_grpc_hello_world_api_proto_rawDescGZIP(), []int{3}
 }
 
 type Set struct {
@@ -208,7 +208,7 @@ type Set struct {
 func (x *Set) Reset() {
 	*x = Set{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_hello_world_api_proto_msgTypes[4]
+		mi := &file_api_grpc_hello_world_api_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -221,7 +221,7 @@ func (x *Set) String() string {
 func (*Set) ProtoMessage() {}
 
 func (x *Set) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_hello_world_api_proto_msgTypes[4]
+	mi := &file_api_grpc_hello_world_api_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -234,7 +234,7 @@ func (x *Set) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Set.ProtoReflect.Descriptor instead.
 func (*Set) Descriptor() ([]byte, []int) {
-	return file_grpc_hello_world_api_proto_rawDescGZIP(), []int{4}
+	return file_api_grpc_hello_world_api_proto_rawDescGZIP(), []int{4}
 }
 
 type Version_Request struct {
@@ -246,7 +246,7 @@ type Version_Request struct {
 func (x *Version_Request) Reset() {
 	*x = Version_Request{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_hello_world_api_proto_msgTypes[5]
+		mi := &file_api_grpc_hello_world_api_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -259,7 +259,7 @@ func (x *Version_Request) String() string {
 func (*Version_Request) ProtoMessage() {}
 
 func (x *Version_Request) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_hello_world_api_proto_msgTypes[5]
+	mi := &file_api_grpc_hello_world_api_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -272,7 +272,7 @@ func (x *Version_Request) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Version_Request.ProtoReflect.Descriptor instead.
 func (*Version_Request) Descriptor() ([]byte, []int) {
-	return file_grpc_hello_world_api_proto_rawDescGZIP(), []int{0, 0}
+	return file_api_grpc_hello_world_api_proto_rawDescGZIP(), []int{0, 0}
 }
 
 type Version_Response struct {
@@ -286,7 +286,7 @@ type Version_Response struct {
 func (x *Version_Response) Reset() {
 	*x = Version_Response{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_hello_world_api_proto_msgTypes[6]
+		mi := &file_api_grpc_hello_world_api_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -299,7 +299,7 @@ func (x *Version_Response) String() string {
 func (*Version_Response) ProtoMessage() {}
 
 func (x *Version_Response) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_hello_world_api_proto_msgTypes[6]
+	mi := &file_api_grpc_hello_world_api_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -312,7 +312,7 @@ func (x *Version_Response) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Version_Response.ProtoReflect.Descriptor instead.
 func (*Version_Response) Descriptor() ([]byte, []int) {
-	return file_grpc_hello_world_api_proto_rawDescGZIP(), []int{0, 1}
+	return file_api_grpc_hello_world_api_proto_rawDescGZIP(), []int{0, 1}
 }
 
 func (x *Version_Response) GetVersion() string {
@@ -333,7 +333,7 @@ type Get_Request struct {
 func (x *Get_Request) Reset() {
 	*x = Get_Request{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_hello_world_api_proto_msgTypes[7]
+		mi := &file_api_grpc_hello_world_api_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -346,7 +346,7 @@ func (x *Get_Request) String() string {
 func (*Get_Request) ProtoMessage() {}
 
 func (x *Get_Request) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_hello_world_api_proto_msgTypes[7]
+	mi := &file_api_grpc_hello_world_api_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -359,7 +359,7 @@ func (x *Get_Request) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Get_Request.ProtoReflect.Descriptor instead.
 func (*Get_Request) Descriptor() ([]byte, []int) {
-	return file_grpc_hello_world_api_proto_rawDescGZIP(), []int{3, 0}
+	return file_api_grpc_hello_world_api_proto_rawDescGZIP(), []int{3, 0}
 }
 
 func (x *Get_Request) GetKey() string {
@@ -380,7 +380,7 @@ type Set_Request struct {
 func (x *Set_Request) Reset() {
 	*x = Set_Request{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_hello_world_api_proto_msgTypes[8]
+		mi := &file_api_grpc_hello_world_api_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -393,7 +393,7 @@ func (x *Set_Request) String() string {
 func (*Set_Request) ProtoMessage() {}
 
 func (x *Set_Request) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_hello_world_api_proto_msgTypes[8]
+	mi := &file_api_grpc_hello_world_api_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -406,7 +406,7 @@ func (x *Set_Request) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Set_Request.ProtoReflect.Descriptor instead.
 func (*Set_Request) Descriptor() ([]byte, []int) {
-	return file_grpc_hello_world_api_proto_rawDescGZIP(), []int{4, 0}
+	return file_api_grpc_hello_world_api_proto_rawDescGZIP(), []int{4, 0}
 }
 
 func (x *Set_Request) GetVals() *Values {
@@ -425,7 +425,7 @@ type Set_Response struct {
 func (x *Set_Response) Reset() {
 	*x = Set_Response{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_grpc_hello_world_api_proto_msgTypes[9]
+		mi := &file_api_grpc_hello_world_api_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -438,7 +438,7 @@ func (x *Set_Response) String() string {
 func (*Set_Response) ProtoMessage() {}
 
 func (x *Set_Response) ProtoReflect() protoreflect.Message {
-	mi := &file_grpc_hello_world_api_proto_msgTypes[9]
+	mi := &file_api_grpc_hello_world_api_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -451,70 +451,71 @@ func (x *Set_Response) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Set_Response.ProtoReflect.Descriptor instead.
 func (*Set_Response) Descriptor() ([]byte, []int) {
-	return file_grpc_hello_world_api_proto_rawDescGZIP(), []int{4, 1}
+	return file_api_grpc_hello_world_api_proto_rawDescGZIP(), []int{4, 1}
 }
 
-var File_grpc_hello_world_api_proto protoreflect.FileDescriptor
+var File_api_grpc_hello_world_api_proto protoreflect.FileDescriptor
 
-var file_grpc_hello_world_api_proto_rawDesc = []byte{
-	0x0a, 0x1a, 0x67, 0x72, 0x70, 0x63, 0x2f, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72,
-	0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0f, 0x68, 0x65,
-	0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69, 0x1a, 0x1c, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x3a, 0x0a, 0x07, 0x56,
-	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x1a, 0x09, 0x0a, 0x07, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x24, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a,
-	0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
-	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x2f, 0x0a, 0x05, 0x56, 0x61, 0x6c, 0x75, 0x65,
-	0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b,
-	0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x38, 0x0a, 0x06, 0x56, 0x61, 0x6c, 0x75,
-	0x65, 0x73, 0x12, 0x2e, 0x0a, 0x06, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03,
-	0x28, 0x0b, 0x32, 0x16, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64,
-	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x06, 0x76, 0x61, 0x6c, 0x75,
-	0x65, 0x73, 0x22, 0x22, 0x0a, 0x03, 0x47, 0x65, 0x74, 0x1a, 0x1b, 0x0a, 0x07, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x22, 0x49, 0x0a, 0x03, 0x53, 0x65, 0x74, 0x1a, 0x36, 0x0a,
-	0x07, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2b, 0x0a, 0x04, 0x76, 0x61, 0x6c, 0x73,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77,
-	0x6f, 0x72, 0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x73, 0x52,
-	0x04, 0x76, 0x61, 0x6c, 0x73, 0x1a, 0x0a, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x32, 0xa3, 0x02, 0x0a, 0x0d, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x57, 0x6f, 0x72, 0x6c, 0x64,
-	0x41, 0x50, 0x49, 0x12, 0x64, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x20,
-	0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69,
-	0x2e, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x21, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x5f, 0x61,
-	0x70, 0x69, 0x2e, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x14, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0e, 0x12, 0x0c, 0x2f, 0x61, 0x70,
-	0x69, 0x2f, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x53, 0x0a, 0x03, 0x47, 0x65, 0x74,
-	0x12, 0x1c, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x5f, 0x61,
-	0x70, 0x69, 0x2e, 0x47, 0x65, 0x74, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16,
-	0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69,
-	0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x16, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x10, 0x12, 0x0e,
-	0x2f, 0x61, 0x70, 0x69, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x7b, 0x6b, 0x65, 0x79, 0x7d, 0x12, 0x57,
-	0x0a, 0x03, 0x53, 0x65, 0x74, 0x12, 0x1c, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f,
-	0x72, 0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x53, 0x65, 0x74, 0x2e, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c,
-	0x64, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x53, 0x65, 0x74, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x13, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0d, 0x3a, 0x01, 0x2a, 0x22, 0x08, 0x2f,
-	0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x74, 0x42, 0x06, 0x5a, 0x04, 0x2f, 0x61, 0x70, 0x69, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+var file_api_grpc_hello_world_api_proto_rawDesc = []byte{
+	0x0a, 0x1e, 0x61, 0x70, 0x69, 0x2f, 0x67, 0x72, 0x70, 0x63, 0x2f, 0x68, 0x65, 0x6c, 0x6c, 0x6f,
+	0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x12, 0x0f, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x5f, 0x61, 0x70,
+	0x69, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e,
+	0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22,
+	0x3a, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x1a, 0x09, 0x0a, 0x07, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x18, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x2f, 0x0a, 0x05, 0x56,
+	0x61, 0x6c, 0x75, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x38, 0x0a, 0x06,
+	0x56, 0x61, 0x6c, 0x75, 0x65, 0x73, 0x12, 0x2e, 0x0a, 0x06, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x73,
+	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77,
+	0x6f, 0x72, 0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x06,
+	0x76, 0x61, 0x6c, 0x75, 0x65, 0x73, 0x22, 0x22, 0x0a, 0x03, 0x47, 0x65, 0x74, 0x1a, 0x1b, 0x0a,
+	0x07, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x22, 0x49, 0x0a, 0x03, 0x53, 0x65,
+	0x74, 0x1a, 0x36, 0x0a, 0x07, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2b, 0x0a, 0x04,
+	0x76, 0x61, 0x6c, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x68, 0x65, 0x6c,
+	0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x56, 0x61, 0x6c,
+	0x75, 0x65, 0x73, 0x52, 0x04, 0x76, 0x61, 0x6c, 0x73, 0x1a, 0x0a, 0x0a, 0x08, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xa3, 0x02, 0x0a, 0x0d, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x57,
+	0x6f, 0x72, 0x6c, 0x64, 0x41, 0x50, 0x49, 0x12, 0x64, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69,
+	0x6f, 0x6e, 0x12, 0x20, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64,
+	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72,
+	0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x14, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0e, 0x12,
+	0x0c, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x53, 0x0a,
+	0x03, 0x47, 0x65, 0x74, 0x12, 0x1c, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72,
+	0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x47, 0x65, 0x74, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x16, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64,
+	0x5f, 0x61, 0x70, 0x69, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x16, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x10, 0x12, 0x0e, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x7b, 0x6b, 0x65,
+	0x79, 0x7d, 0x12, 0x57, 0x0a, 0x03, 0x53, 0x65, 0x74, 0x12, 0x1c, 0x2e, 0x68, 0x65, 0x6c, 0x6c,
+	0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x53, 0x65, 0x74, 0x2e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f,
+	0x77, 0x6f, 0x72, 0x6c, 0x64, 0x5f, 0x61, 0x70, 0x69, 0x2e, 0x53, 0x65, 0x74, 0x2e, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x13, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0d, 0x3a, 0x01,
+	0x2a, 0x22, 0x08, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x74, 0x42, 0x0e, 0x5a, 0x0c, 0x2f,
+	0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x5f, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x33,
 }
 
 var (
-	file_grpc_hello_world_api_proto_rawDescOnce sync.Once
-	file_grpc_hello_world_api_proto_rawDescData = file_grpc_hello_world_api_proto_rawDesc
+	file_api_grpc_hello_world_api_proto_rawDescOnce sync.Once
+	file_api_grpc_hello_world_api_proto_rawDescData = file_api_grpc_hello_world_api_proto_rawDesc
 )
 
-func file_grpc_hello_world_api_proto_rawDescGZIP() []byte {
-	file_grpc_hello_world_api_proto_rawDescOnce.Do(func() {
-		file_grpc_hello_world_api_proto_rawDescData = protoimpl.X.CompressGZIP(file_grpc_hello_world_api_proto_rawDescData)
+func file_api_grpc_hello_world_api_proto_rawDescGZIP() []byte {
+	file_api_grpc_hello_world_api_proto_rawDescOnce.Do(func() {
+		file_api_grpc_hello_world_api_proto_rawDescData = protoimpl.X.CompressGZIP(file_api_grpc_hello_world_api_proto_rawDescData)
 	})
-	return file_grpc_hello_world_api_proto_rawDescData
+	return file_api_grpc_hello_world_api_proto_rawDescData
 }
 
-var file_grpc_hello_world_api_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
-var file_grpc_hello_world_api_proto_goTypes = []interface{}{
+var file_api_grpc_hello_world_api_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_api_grpc_hello_world_api_proto_goTypes = []interface{}{
 	(*Version)(nil),          // 0: hello_world_api.Version
 	(*Value)(nil),            // 1: hello_world_api.Value
 	(*Values)(nil),           // 2: hello_world_api.Values
@@ -526,7 +527,7 @@ var file_grpc_hello_world_api_proto_goTypes = []interface{}{
 	(*Set_Request)(nil),      // 8: hello_world_api.Set.Request
 	(*Set_Response)(nil),     // 9: hello_world_api.Set.Response
 }
-var file_grpc_hello_world_api_proto_depIdxs = []int32{
+var file_api_grpc_hello_world_api_proto_depIdxs = []int32{
 	1, // 0: hello_world_api.Values.values:type_name -> hello_world_api.Value
 	2, // 1: hello_world_api.Set.Request.vals:type_name -> hello_world_api.Values
 	5, // 2: hello_world_api.helloWorldAPI.Version:input_type -> hello_world_api.Version.Request
@@ -542,13 +543,13 @@ var file_grpc_hello_world_api_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_grpc_hello_world_api_proto_init() }
-func file_grpc_hello_world_api_proto_init() {
-	if File_grpc_hello_world_api_proto != nil {
+func init() { file_api_grpc_hello_world_api_proto_init() }
+func file_api_grpc_hello_world_api_proto_init() {
+	if File_api_grpc_hello_world_api_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_grpc_hello_world_api_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_api_grpc_hello_world_api_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Version); i {
 			case 0:
 				return &v.state
@@ -560,7 +561,7 @@ func file_grpc_hello_world_api_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_hello_world_api_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_api_grpc_hello_world_api_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Value); i {
 			case 0:
 				return &v.state
@@ -572,7 +573,7 @@ func file_grpc_hello_world_api_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_hello_world_api_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_api_grpc_hello_world_api_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Values); i {
 			case 0:
 				return &v.state
@@ -584,7 +585,7 @@ func file_grpc_hello_world_api_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_hello_world_api_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_api_grpc_hello_world_api_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Get); i {
 			case 0:
 				return &v.state
@@ -596,7 +597,7 @@ func file_grpc_hello_world_api_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_hello_world_api_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_api_grpc_hello_world_api_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Set); i {
 			case 0:
 				return &v.state
@@ -608,7 +609,7 @@ func file_grpc_hello_world_api_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_hello_world_api_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_api_grpc_hello_world_api_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Version_Request); i {
 			case 0:
 				return &v.state
@@ -620,7 +621,7 @@ func file_grpc_hello_world_api_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_hello_world_api_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_api_grpc_hello_world_api_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Version_Response); i {
 			case 0:
 				return &v.state
@@ -632,7 +633,7 @@ func file_grpc_hello_world_api_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_hello_world_api_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_api_grpc_hello_world_api_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Get_Request); i {
 			case 0:
 				return &v.state
@@ -644,7 +645,7 @@ func file_grpc_hello_world_api_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_hello_world_api_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_api_grpc_hello_world_api_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Set_Request); i {
 			case 0:
 				return &v.state
@@ -656,7 +657,7 @@ func file_grpc_hello_world_api_proto_init() {
 				return nil
 			}
 		}
-		file_grpc_hello_world_api_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_api_grpc_hello_world_api_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Set_Response); i {
 			case 0:
 				return &v.state
@@ -673,18 +674,18 @@ func file_grpc_hello_world_api_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_grpc_hello_world_api_proto_rawDesc,
+			RawDescriptor: file_api_grpc_hello_world_api_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_grpc_hello_world_api_proto_goTypes,
-		DependencyIndexes: file_grpc_hello_world_api_proto_depIdxs,
-		MessageInfos:      file_grpc_hello_world_api_proto_msgTypes,
+		GoTypes:           file_api_grpc_hello_world_api_proto_goTypes,
+		DependencyIndexes: file_api_grpc_hello_world_api_proto_depIdxs,
+		MessageInfos:      file_api_grpc_hello_world_api_proto_msgTypes,
 	}.Build()
-	File_grpc_hello_world_api_proto = out.File
-	file_grpc_hello_world_api_proto_rawDesc = nil
-	file_grpc_hello_world_api_proto_goTypes = nil
-	file_grpc_hello_world_api_proto_depIdxs = nil
+	File_api_grpc_hello_world_api_proto = out.File
+	file_api_grpc_hello_world_api_proto_rawDesc = nil
+	file_api_grpc_hello_world_api_proto_goTypes = nil
+	file_api_grpc_hello_world_api_proto_depIdxs = nil
 }

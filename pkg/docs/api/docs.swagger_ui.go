@@ -10,7 +10,7 @@ import (
 	swaggerui "github.com/Red-Sock/go-swagger-ui"
 )
 
-//go:embed all:swaggers
+//go:embed all:grpc
 var swaggers embed.FS
 
 const (
@@ -24,17 +24,17 @@ func Swagger() (p string, handler http.HandlerFunc) {
 	mux.Handle(BasePath, swaggerui.NewHandler(
 		swaggerui.WithBasePath(BasePath),
 		swaggerui.WithHTMLTitle("Swagger"),
-		swaggerui.WithSpecURLs("Grpc/helloWorldApi",
+		swaggerui.WithSpecURLs("Api/grpc/helloWorldApi",
 			[]swaggerui.SpecURL{
 				{
-					Name: "Grpc/helloWorldApi",
-					URL:  path.Join(swaggerPath, "grpc/hello_world_api.swagger.json"),
+					Name: "Api/grpc/helloWorldApi",
+					URL:  path.Join(swaggerPath, "api/grpc/hello_world_api.swagger.json"),
 				},
 			}),
 		swaggerui.WithShowExtensions(true),
 	))
 
-	stripped, err := fs.Sub(swaggers, "swaggers")
+	stripped, err := fs.Sub(swaggers, "grpc")
 	if err != nil {
 		log.Fatal(err)
 	}
