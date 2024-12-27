@@ -3,7 +3,7 @@ package api
 import (
 	"context"
 
-	"github.com/godverv/hello_world/pkg/api"
+	api "github.com/godverv/hello_world/pkg/hello_world"
 )
 
 func (a *Impl) Version(_ context.Context, _ *api.Version_Request) (

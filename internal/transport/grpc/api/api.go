@@ -10,7 +10,7 @@ import (
 	"google.golang.org/grpc"
 
 	"github.com/godverv/hello_world/internal/config"
-	"github.com/godverv/hello_world/pkg/api"
+	api "github.com/godverv/hello_world/pkg/hello_world"
 )
 
 type Impl struct {

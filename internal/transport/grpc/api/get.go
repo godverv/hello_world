@@ -5,7 +5,7 @@ import (
 
 	errors "github.com/Red-Sock/trace-errors"
 
-	"github.com/godverv/hello_world/pkg/api"
+	api "github.com/godverv/hello_world/pkg/hello_world"
 )
 
 func (a *Impl) Get(ctx context.Context, r *api.Get_Request) (*api.Value, error) {
