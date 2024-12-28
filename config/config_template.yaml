@@ -11,3 +11,7 @@ servers:
         /{GRPC}:
             module: pkg/hello_world
             gateway: /v1
+environment:
+    - name: int_slice
+      type: int
+      value: '[18501-18519]'

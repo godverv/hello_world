@@ -16,6 +16,7 @@ type Config struct {
 
 	Servers     ServersConfig
 	DataSources DataSourcesConfig
+	Environment EnvironmentConfig
 }
 
 var defaultConfig Config
@@ -59,6 +60,10 @@ func Load() (Config, error) {
 	err = rootConfig.DataSources.ParseToStruct(&defaultConfig.DataSources)
 	if err != nil {
 		return defaultConfig, rerrors.Wrap(err, "error parsing data sources to struct")
+	}
+	err = rootConfig.Environment.ParseToStruct(&defaultConfig.Environment)
+	if err != nil {
+		return defaultConfig, rerrors.Wrap(err, "error parsing environment config")
 	}
 
 	return defaultConfig, nil

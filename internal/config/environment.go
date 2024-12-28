@@ -3,4 +3,5 @@
 package config
 
 type EnvironmentConfig struct {
+	IntSlice []int
 }
