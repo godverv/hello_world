@@ -3,13 +3,13 @@
 package app
 
 import (
+	"context"
 	"database/sql"
-	"github.com/Red-Sock/toolbox"
-	"github.com/Red-Sock/toolbox/closer"
-	errors "github.com/Red-Sock/trace-errors"
 	"github.com/godverv/hello_world/internal/transport"
 	"github.com/sirupsen/logrus"
-	"golang.org/x/net/context"
+	"go.redsock.ru/rerrors"
+	"go.redsock.ru/toolbox"
+	"go.redsock.ru/toolbox/closer"
 	"golang.org/x/sync/errgroup"
 
 	"github.com/godverv/hello_world/internal/config"
@@ -22,7 +22,7 @@ type App struct {
 	/* Data source connection */
 	Sqlite *sql.DB
 	/* Servers managers */
-	Server *transport.ServersManager
+	ServerMaster *transport.ServersManager
 
 	Custom Custom
 }
@@ -32,22 +32,22 @@ func New() (app App, err error) {
 
 	err = app.InitConfig()
 	if err != nil {
-		return App{}, errors.Wrap(err, "error initializing config")
+		return App{}, rerrors.Wrap(err, "error initializing config")
 	}
 
 	err = app.InitDataSources()
 	if err != nil {
-		return App{}, errors.Wrap(err, "error during data sources initialization")
+		return App{}, rerrors.Wrap(err, "error during data sources initialization")
 	}
 
 	err = app.InitServers()
 	if err != nil {
-		return App{}, errors.Wrap(err, "error during server initialization")
+		return App{}, rerrors.Wrap(err, "error during server initialization")
 	}
 
 	err = app.Custom.Init(&app)
 	if err != nil {
-		return App{}, errors.Wrap(err, "error initializing custom app properties")
+		return App{}, rerrors.Wrap(err, "error initializing custom app properties")
 	}
 
 	return app, nil
@@ -56,8 +56,8 @@ func New() (app App, err error) {
 func (a *App) Start() (err error) {
 	var eg *errgroup.Group
 	eg, a.Ctx = errgroup.WithContext(a.Ctx)
-	eg.Go(a.Server.Start)
-	closer.Add(func() error { return a.Server.Stop() })
+	eg.Go(a.ServerMaster.Start)
+	closer.Add(func() error { return a.ServerMaster.Stop() })
 
 	interaptedC := func() chan struct{} {
 		c := make(chan struct{})
@@ -89,7 +89,7 @@ func (a *App) Start() (err error) {
 
 	err = closer.Close()
 	if err != nil {
-		return errors.Wrap(err, "error while shutting down application")
+		return rerrors.Wrap(err, "error while shutting down application")
 	}
 
 	return nil

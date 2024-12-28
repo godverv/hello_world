@@ -3,14 +3,14 @@
 package app
 
 import (
-	errors "github.com/Red-Sock/trace-errors"
 	"github.com/godverv/hello_world/internal/clients/sqldb"
+	"go.redsock.ru/rerrors"
 )
 
 func (a *App) InitDataSources() (err error) {
 	a.Sqlite, err = sqldb.New(a.Cfg.DataSources.Sqlite)
 	if err != nil {
-		return errors.Wrap(err, "error during sql connection initialization")
+		return rerrors.Wrap(err, "error during sql connection initialization")
 	}
 
 	return nil
