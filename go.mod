@@ -6,6 +6,7 @@ require (
 	github.com/Red-Sock/go-swagger-ui v0.0.2
 	github.com/Red-Sock/trace-errors v0.0.13
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.25.1
+	github.com/lib/pq v1.10.9
 	github.com/pressly/goose/v3 v3.24.0
 	github.com/rs/cors v1.11.1
 	github.com/sirupsen/logrus v1.9.3
