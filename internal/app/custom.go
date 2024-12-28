@@ -16,9 +16,9 @@ type Custom struct {
 func (c *Custom) Init(a *App) error {
 	grpcImpl := api.New(a.Sqlite, a.Cfg)
 
-	a.Server.AddImplementation(grpcImpl)
+	a.ServerMaster.AddImplementation(grpcImpl)
 
-	a.Server.AddHttpHandler(docs.Swagger())
+	a.ServerMaster.AddHttpHandler(docs.Swagger())
 
 	return nil
 }

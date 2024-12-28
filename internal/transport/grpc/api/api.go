@@ -30,21 +30,19 @@ func New(db *sql.DB, cfg config.Config) *Impl {
 	return a
 }
 
-func (a *Impl) Register(server *grpc.Server) {
+func (a *Impl) Register(server grpc.ServiceRegistrar) {
 	api.RegisterHelloWorldAPIServer(server, a)
 }
 
 func (a *Impl) Gateway(ctx context.Context, endpoint string, opts ...grpc.DialOption) (route string, handler http.Handler) {
-	gwHttpMux := runtime.NewServeMux(
-		runtime.WithMarshalerOption(
-			runtime.MIMEWildcard, &runtime.JSONPb{},
-		),
-	)
+	gwHttpMux := runtime.NewServeMux()
 
-	err := api.RegisterHelloWorldAPIHandlerFromEndpoint(ctx,
+	err := api.RegisterHelloWorldAPIHandlerFromEndpoint(
+		ctx,
 		gwHttpMux,
 		endpoint,
-		opts)
+		opts,
+	)
 	if err != nil {
 		logrus.Errorf("error registering grpc2http handler: %s", err)
 	}
