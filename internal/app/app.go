@@ -20,8 +20,7 @@ type App struct {
 	Stop func()
 	Cfg  config.Config
 	/* Data source connection */
-	Sqlite   *sql.DB
-	Postgres *sql.DB
+	Sqlite *sql.DB
 	/* Servers managers */
 	ServerMaster *transport.ServersManager
 
@@ -59,6 +58,11 @@ func (a *App) Start() (err error) {
 	eg, a.Ctx = errgroup.WithContext(a.Ctx)
 	eg.Go(a.ServerMaster.Start)
 	closer.Add(func() error { return a.ServerMaster.Stop() })
+
+	eg.Go(func() error {
+		return a.Custom.Start(a.Ctx)
+	})
+	closer.Add(a.Custom.Stop)
 
 	interaptedC := func() chan struct{} {
 		c := make(chan struct{})

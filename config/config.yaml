@@ -6,14 +6,6 @@ data_sources:
     - resource_name: sqlite
       path: ./hello_world.db
       migrations_folder: ./migrations
-    - resource_name: postgres
-      migrations_folder: ./migrations
-      host: localhost
-      port: 5432
-      user: hello_world
-      pwd: ""
-      name: hello_world
-      ssl_mode: ""
 servers:
     80:
         /{GRPC}:
