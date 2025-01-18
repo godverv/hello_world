@@ -4,6 +4,8 @@
 package app
 
 import (
+	"context"
+
 	"github.com/godverv/hello_world/internal/transport"
 	"github.com/godverv/hello_world/internal/transport/docs"
 	"github.com/godverv/hello_world/internal/transport/grpc/api"
@@ -20,5 +22,13 @@ func (c *Custom) Init(a *App) error {
 
 	a.ServerMaster.AddHttpHandler(docs.Swagger())
 
+	return nil
+}
+
+func (c *Custom) Start(ctx context.Context) error {
+	return nil
+}
+
+func (c *Custom) Stop() error {
 	return nil
 }
